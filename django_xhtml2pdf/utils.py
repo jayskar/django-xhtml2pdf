@@ -5,7 +5,12 @@ from django.template.context import Context
 from django.template.loader import get_template
 from django.template.response import TemplateResponse
 from xhtml2pdf import pisa # TODO: Change this when the lib changes.
-import StringIO
+#import StringIO
+# Below added for Python 3
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 import os
 
 #===============================================================================
